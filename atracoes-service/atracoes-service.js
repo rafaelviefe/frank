@@ -121,19 +121,6 @@ app.patch('/atracoes/:id', (req, res, next) => {
         });
 });
 
-app.delete('/atracoes/:id', (req, res, next) => {
-    db.run(`DELETE FROM atracoes WHERE id = ?`, req.params.id, function (err) {
-        if (err) {
-            res.status(500).send('Erro ao remover atração.');
-        } else if (this.changes == 0) {
-            console.log("Atração não encontrada.");
-            res.status(404).send('Atração não encontrada.');
-        } else {
-            res.status(200).send('Atração removida com sucesso!');
-        }
-    });
-});
-
 app.listen(PORT, () => {
     console.log(`Serviço de atrações em execução na porta: ${PORT}`);
 });
