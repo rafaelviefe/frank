@@ -1,18 +1,27 @@
 # Dependências
 node_modules/
 
-# Build
-dist/
-build/
+# Banco de dados local
+*.db
+*.sqlite
+*.sqlite3
 
 # Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Ambiente
+# Build ou cache
+dist/
+build/
+.cache/
+.tmp/
+
+# Variáveis de ambiente (nunca subir senhas, tokens, URLs privadas)
 .env
 .env.local
 
-# Sistema
+# Sistema operacional
 .DS_Store
+Thumbs.db
